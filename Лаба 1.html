@@ -52,6 +52,7 @@
         .header p {
             font-size: 1.4em;
             opacity: 0.95;
+            margin-bottom: 20px;
         }
 
         .header .stats {
@@ -69,6 +70,18 @@
             font-size: 1.1em;
             border: 1px solid rgba(255,255,255,0.3);
             backdrop-filter: blur(5px);
+        }
+
+        .repo-badge {
+            display: inline-block;
+            background: #FFD700;
+            color: #141E30;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .navigation {
@@ -318,6 +331,18 @@
             font-family: monospace;
         }
 
+        .github-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.2em;
@@ -339,15 +364,18 @@
         <div class="header">
             <h1>🖥️ <span>USHAKOV</span>-LINUX</h1>
             <p>Полный фотоотчёт установки Ubuntu на VirtualBox</p>
+            <div class="repo-badge">
+                🔗 github.com/CrazinessAngel/Ushakov-Linux
+            </div>
             <div class="stats">
                 <span class="stat-item">📷 9 фотографий</span>
-                <span class="stat-item">📁 Все скриншоты в репозитории</span>
+                <span class="stat-item">📁 Raw Content GitHub</span>
                 <span class="stat-item">🔢 Нумерация: (-1) до (3)</span>
             </div>
         </div>
 
         <div class="repo-info">
-            <h3>📂 Файлы в репозитории:</h3>
+            <h3>📂 Файлы в репозитории (GitHub Raw):</h3>
             <div class="file-list">
                 <span class="file-item">Снимок экрана (-1).png</span>
                 <span class="file-item">Снимок экрана (-1.1).png</span>
@@ -359,6 +387,7 @@
                 <span class="file-item">Снимок экрана (2).png</span>
                 <span class="file-item">Снимок экрана (3).png</span>
             </div>
+            <a class="github-link" href="https://github.com/CrazinessAngel/Ushakov-Linux" target="_blank">🔗 Открыть репозиторий на GitHub</a>
         </div>
 
         <div class="progress-bar">
@@ -383,9 +412,8 @@
                     <div class="photo-grid">
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (-1).png" 
-                                     alt="Подготовка VirtualBox -1"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(-1)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(-1).png" 
+                                     alt="Подготовка VirtualBox -1">
                             </div>
                             <div class="photo-caption">
                                 <strong>Подготовка VirtualBox</strong>
@@ -395,9 +423,8 @@
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (-1.1).png" 
-                                     alt="Создание ВМ -1.1"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(-1.1)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(-1.1).png" 
+                                     alt="Создание ВМ -1.1">
                             </div>
                             <div class="photo-caption">
                                 <strong>Создание виртуальной машины</strong>
@@ -407,9 +434,8 @@
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (-1.2).png" 
-                                     alt="Настройка параметров -1.2"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(-1.2)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(-1.2).png" 
+                                     alt="Настройка параметров -1.2">
                             </div>
                             <div class="photo-caption">
                                 <strong>Настройка параметров ВМ</strong>
@@ -435,9 +461,8 @@
                     <div class="photo-grid">
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (-1.3).png" 
-                                     alt="Дополнительные настройки -1.3"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(-1.3)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(-1.3).png" 
+                                     alt="Дополнительные настройки -1.3">
                             </div>
                             <div class="photo-caption">
                                 <strong>Дополнительные настройки</strong>
@@ -447,9 +472,8 @@
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (0).png" 
-                                     alt="Начало загрузки 0"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(0)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(0).png" 
+                                     alt="Начало загрузки 0">
                             </div>
                             <div class="photo-caption">
                                 <strong>Начало загрузки системы</strong>
@@ -475,9 +499,8 @@
                     <div class="photo-grid">
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (1).png" 
-                                     alt="Начало установки 1"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(1)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(1).png" 
+                                     alt="Начало установки 1">
                             </div>
                             <div class="photo-caption">
                                 <strong>Начало установки Ubuntu</strong>
@@ -487,9 +510,8 @@
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (1.9).png" 
-                                     alt="Процесс установки 1.9"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(1.9)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(1.9).png" 
+                                     alt="Процесс установки 1.9">
                             </div>
                             <div class="photo-caption">
                                 <strong>Процесс установки</strong>
@@ -515,9 +537,8 @@
                     <div class="photo-grid">
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (2).png" 
-                                     alt="Завершение установки 2"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(2)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(2).png" 
+                                     alt="Завершение установки 2">
                             </div>
                             <div class="photo-caption">
                                 <strong>Завершение установки</strong>
@@ -527,9 +548,8 @@
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="Снимок экрана (3).png" 
-                                     alt="Первый запуск 3"
-                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Снимок+(3)'">
+                                <img src="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(3).png" 
+                                     alt="Первый запуск 3">
                             </div>
                             <div class="photo-caption">
                                 <strong>Первый запуск Ubuntu</strong>
@@ -548,7 +568,7 @@
 
         <div class="footer">
             <p>📁 <strong>Ushakov-Linux</strong> | Полный фотоотчёт установки Ubuntu на VirtualBox</p>
-            <p>🖼️ Все 9 скриншотов загружены в репозиторий:</p>
+            <p>🖼️ Все 9 скриншотов загружены в репозиторий и доступны через GitHub Raw Content</p>
             <p>
                 <code>Снимок экрана (-1).png</code> • 
                 <code>Снимок экрана (-1.1).png</code> • 
@@ -561,7 +581,7 @@
                 <code>Снимок экрана (3).png</code>
             </p>
             <p>📅 Март 2026 | ✅ Все этапы установки задокументированы</p>
-            <p>🔗 <a href="#">Исходный код на GitHub</a></p>
+            <p>🔗 <a href="https://github.com/CrazinessAngel/Ushakov-Linux" target="_blank">Исходный код на GitHub</a> | <a href="https://raw.githubusercontent.com/CrazinessAngel/Ushakov-Linux/main/Снимок%20экрана%20(3).png" target="_blank">Пример прямого RAW-ссылки</a></p>
         </div>
     </div>
 
@@ -571,12 +591,13 @@
             img.onerror = function() {
                 console.log('Не удалось загрузить:', this.src);
                 this.style.border = '2px solid red';
+                this.style.opacity = '0.7';
                 // Добавляем подпись об ошибке
                 const parent = this.closest('.photo-card');
                 if (parent) {
                     const caption = parent.querySelector('.photo-caption');
                     if (caption) {
-                        caption.innerHTML += '<br><span style="color: red;">⚠️ Файл не найден</span>';
+                        caption.innerHTML += '<br><span style="color: red; font-weight: bold;">⚠️ Ошибка загрузки</span>';
                     }
                 }
             };
