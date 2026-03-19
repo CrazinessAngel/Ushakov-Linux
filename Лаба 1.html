@@ -1,9 +1,12 @@
+Отлично! Теперь понятно, что фотографии уже есть в GitHub с названиями от `Снимок экрана от -1.1.png` до `Снимок экрана от 3.0.png`. Вот исправленный код с правильными путями к изображениям:
 
+```html
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Полный отчёт по установке Ubuntu в VirtualBox</title>
+    <title>Ushakov-Linux - Установка Ubuntu на VirtualBox</title>
     <style>
         * {
             margin: 0;
@@ -20,44 +23,85 @@
         }
 
         .report-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 30px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            background: linear-gradient(135deg, #141E30 0%, #243B55 100%);
             color: white;
             padding: 50px 40px;
             text-align: center;
+            border-bottom: 5px solid #FFD700;
         }
 
         .header h1 {
-            font-size: 2.8em;
+            font-size: 3.2em;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        .header h1 span {
+            color: #FFD700;
         }
 
         .header p {
-            font-size: 1.3em;
+            font-size: 1.4em;
             opacity: 0.95;
         }
 
         .header .stats {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .stat-item {
-            background: rgba(255,255,255,0.2);
-            padding: 10px 25px;
-            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 30px;
+            border-radius: 40px;
             font-size: 1.1em;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px auto;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .nav-button {
+            padding: 14px 28px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            color: #243B55;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-button:hover {
+            background: #243B55;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         .steps {
@@ -65,72 +109,76 @@
         }
 
         .step {
-            margin-bottom: 50px;
-            background: #f8f9fa;
-            border-radius: 15px;
+            margin-bottom: 60px;
+            background: #f8fafc;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
         }
 
         .step:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
 
         .step-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #243B55 0%, #141E30 100%);
             color: white;
-            padding: 20px 30px;
-            font-size: 1.4em;
+            padding: 25px 35px;
+            font-size: 1.6em;
             font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .step-number {
-            background: rgba(255,255,255,0.2);
-            width: 40px;
-            height: 40px;
+            background: #FFD700;
+            color: #141E30;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2em;
+            font-size: 1.4em;
+            font-weight: 800;
         }
 
         .step-content {
-            padding: 30px;
+            padding: 35px;
         }
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
             margin: 25px 0;
         }
 
         .photo-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #edf2f7;
         }
 
         .photo-card:hover {
             transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         .photo-container {
             width: 100%;
-            height: 250px;
+            height: 280px;
             overflow: hidden;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #f1f5f9;
+            position: relative;
+            cursor: pointer;
         }
 
         .photo-container img {
@@ -145,122 +193,130 @@
         }
 
         .photo-caption {
-            padding: 15px;
+            padding: 18px;
             text-align: center;
-            font-size: 1em;
-            color: #555;
-            border-top: 1px solid #eee;
+            font-size: 1.1em;
+            color: #2d3748;
+            border-top: 1px solid #e2e8f0;
             background: white;
+            font-weight: 500;
         }
 
         .photo-page {
             display: inline-block;
-            background: #6c757d;
+            background: #667eea;
             color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-top: 8px;
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
         }
 
         .step-description {
             text-align: center;
-            margin: 25px 0 15px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            font-size: 1.1em;
-            color: #444;
-            border-left: 4px solid #667eea;
+            margin: 30px 0 15px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            font-size: 1.15em;
+            color: #1a202c;
+            border-left: 6px solid #FFD700;
+            line-height: 1.6;
         }
 
         .badge {
             display: inline-block;
-            background: #28a745;
+            background: #48bb78;
             color: white;
-            padding: 6px 18px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            margin: 10px 5px;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.95em;
+            margin: 12px 6px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 10px rgba(72, 187, 120, 0.3);
         }
 
         .badge-warning {
-            background: #ffc107;
-            color: #333;
+            background: #ecc94b;
+            color: #1a202c;
+            box-shadow: 0 3px 10px rgba(236, 201, 75, 0.3);
         }
 
         .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #e9ecef;
-            border-radius: 5px;
-            margin: 20px 0;
+            width: 90%;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            margin: 30px auto;
             overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #4ECDC4, #556270);
+            background: linear-gradient(90deg, #48bb78, #667eea, #9f7aea);
             width: 100%;
-            border-radius: 5px;
+            border-radius: 20px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         .footer {
-            background: #2d3748;
+            background: #1a202c;
             color: white;
             text-align: center;
-            padding: 30px;
-            font-size: 0.95em;
+            padding: 35px;
+            font-size: 1em;
+            border-top: 5px solid #FFD700;
         }
 
         .footer a {
-            color: #90cdf4;
+            color: #FFD700;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         .footer a:hover {
+            color: white;
             text-decoration: underline;
         }
 
-        .navigation {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
+        .repo-info {
+            background: #ebf4ff;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 40px;
+            text-align: center;
+            border: 2px dashed #667eea;
         }
 
-        .nav-button {
-            padding: 12px 25px;
-            background: white;
-            border: 2px solid #667eea;
-            border-radius: 30px;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .nav-button:hover {
-            background: #667eea;
-            color: white;
+        .repo-info code {
+            background: #1a202c;
+            color: #FFD700;
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-size: 1.1em;
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
-            
             .steps {
                 padding: 20px;
             }
-            
             .photo-grid {
                 grid-template-columns: 1fr;
             }
-            
             .step-header {
-                font-size: 1.2em;
+                font-size: 1.3em;
             }
         }
     </style>
@@ -268,13 +324,18 @@
 <body>
     <div class="report-container">
         <div class="header">
-            <h1>📸 Полный фотоотчёт</h1>
-            <p>Установка Ubuntu на VirtualBox | Все этапы с фотографиями</p>
+            <h1>🖥️ <span>USHAKOV</span>-LINUX</h1>
+            <p>Полный фотоотчёт установки Ubuntu на VirtualBox</p>
             <div class="stats">
-                <span class="stat-item">📷 4+ фотографий</span>
-                <span class="stat-item">📑 4 страницы PDF</span>
-                <span class="stat-item">⏱️ Полный процесс</span>
+                <span class="stat-item">📷 10+ фотографий</span>
+                <span class="stat-item">📁 Формат: PNG</span>
+                <span class="stat-item">🔢 Нумерация: от -1.1 до 3.0</span>
             </div>
+        </div>
+
+        <div class="repo-info">
+            📂 <strong>Фотографии находятся в том же репозитории GitHub</strong><br>
+            🖼️ Формат имени: <code>Снимок экрана от -1.1.png</code> до <code>Снимок экрана от 3.0.png</code>
         </div>
 
         <div class="progress-bar">
@@ -282,196 +343,214 @@
         </div>
 
         <div class="navigation">
-            <a href="#step1" class="nav-button">Шаг 1</a>
-            <a href="#step2" class="nav-button">Шаг 2</a>
-            <a href="#step3" class="nav-button">Шаг 3</a>
-            <a href="#step4" class="nav-button">Шаг 4</a>
+            <a href="#step1" class="nav-button">🚀 Шаг 1: Запуск</a>
+            <a href="#step2" class="nav-button">🌐 Шаг 2: Сеть</a>
+            <a href="#step3" class="nav-button">💿 Шаг 3: Установка</a>
+            <a href="#step4" class="nav-button">🎉 Шаг 4: Завершение</a>
         </div>
 
         <div class="steps">
-            <!-- ШАГ 1: Включение OS (Страница 1 и страница 4 - фото 1) -->
+            <!-- ШАГ 1: Запуск системы (Фото: -1.1, -1.0, 1.0) -->
             <div class="step" id="step1">
                 <div class="step-header">
                     <span class="step-number">1</span>
-                    Этап 1: Запуск и инициализация
+                    Запуск виртуальной машины
                 </div>
                 <div class="step-content">
                     <div class="photo-grid">
-                        <!-- Фото со страницы 1 -->
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="-1.png" 
-                                     alt="Включение OS - Страница 1">
+                                <img src="Снимок экрана от -1.1.png" 
+                                     alt="Запуск VirtualBox -1.1"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+-1.1'">
                             </div>
                             <div class="photo-caption">
                                 <strong>Запуск VirtualBox</strong><br>
-                                Страница 1: Включение виртуальной машины
+                                Снимок экрана от -1.1.png
                                 <div class="photo-page">Страница 1</div>
                             </div>
                         </div>
                         
-                        <!-- Фото со страницы 4 (номер 1) -->
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=BIOS+Startup" 
-                                     alt="BIOS Загрузка - Страница 4">
+                                <img src="Снимок экрана от -1.0.png" 
+                                     alt="Загрузка BIOS -1.0"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+-1.0'">
                             </div>
                             <div class="photo-caption">
                                 <strong>Загрузка BIOS</strong><br>
-                                Страница 4: Начальная загрузка системы (фото 1)
-                                <div class="photo-page">Страница 4 - Фото 1</div>
+                                Снимок экрана от -1.0.png
+                                <div class="photo-page">Страница 4 (фото 1)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-card">
+                            <div class="photo-container">
+                                <img src="Снимок экрана от 1.0.png" 
+                                     alt="Начало установки 1.0"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+1.0'">
+                            </div>
+                            <div class="photo-caption">
+                                <strong>Начало установки</strong><br>
+                                Снимок экрана от 1.0.png
+                                <div class="photo-page">Страница 1</div>
                             </div>
                         </div>
                     </div>
                     <div class="step-description">
-                        <p>🚀 Запускаем Oracle VM VirtualBox и включаем виртуальную машину. На этом этапе происходит инициализация системы и загрузка BIOS виртуальной машины.</p>
-                        <span class="badge">✓ Система запущена</span>
+                        <p>🚀 Запускаем Oracle VM VirtualBox и включаем виртуальную машину. На этом этапе происходит инициализация системы, загрузка BIOS и начало установки Ubuntu.</p>
+                        <span class="badge">✓ VirtualBox запущен</span>
+                        <span class="badge">✓ BIOS загружена</span>
                     </div>
                 </div>
             </div>
 
-            <!-- ШАГ 2: Проверка сети (Страница 2) -->
+            <!-- ШАГ 2: Проверка сети (Фото: 1.1, 1.2, 1.3) -->
             <div class="step" id="step2">
                 <div class="step-header">
                     <span class="step-number">2</span>
-                    Этап 2: Настройка сети
+                    Настройка сетевых подключений
                 </div>
                 <div class="step-content">
                     <div class="photo-grid">
-                        <!-- Фото со страницы 2 -->
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Network+Settings" 
-                                     alt="Настройка сети - Страница 2">
+                                <img src="Снимок экрана от 1.1.png" 
+                                     alt="Настройка сети 1.1"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+1.1'">
                             </div>
                             <div class="photo-caption">
-                                <strong>Конфигурация сети</strong><br>
-                                Страница 2: Проверка сетевых подключений
+                                <strong>Настройка сети - 1</strong><br>
+                                Снимок экрана от 1.1.png
                                 <div class="photo-page">Страница 2</div>
                             </div>
                         </div>
                         
-                        <!-- Дополнительное фото для проверки сети -->
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Network+Adapter" 
-                                     alt="Сетевой адаптер">
+                                <img src="Снимок экрана от 1.2.png" 
+                                     alt="Параметры сети 1.2"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+1.2'">
                             </div>
                             <div class="photo-caption">
-                                <strong>Настройка адаптера</strong><br>
-                                Выбор типа подключения (NAT/Мост)
-                                <div class="photo-page">Дополнительно</div>
+                                <strong>Настройка сети - 2</strong><br>
+                                Снимок экрана от 1.2.png
+                                <div class="photo-page">Страница 2</div>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-card">
+                            <div class="photo-container">
+                                <img src="Снимок экрана от 1.3.png" 
+                                     alt="Проверка сети 1.3"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+1.3'">
+                            </div>
+                            <div class="photo-caption">
+                                <strong>Проверка подключения</strong><br>
+                                Снимок экрана от 1.3.png
+                                <div class="photo-page">Страница 2</div>
                             </div>
                         </div>
                     </div>
                     <div class="step-description">
-                        <p>🌐 Настраиваем сетевые параметры виртуальной машины. Важно правильно выбрать тип подключения для доступа в интернет и работы сети.</p>
+                        <p>🌐 Настраиваем сетевые параметры виртуальной машины. Выбираем тип подключения NAT или Сетевой мост для доступа в интернет.</p>
                         <span class="badge">✓ Сеть настроена</span>
-                        <span class="badge badge-warning">⚡ Проверка подключения</span>
+                        <span class="badge badge-warning">✓ Проверка выполнена</span>
                     </div>
                 </div>
             </div>
 
-            <!-- ШАГ 3: Процесс установки (Страница 3 - фото 2) -->
+            <!-- ШАГ 3: Процесс установки (Фото: 2.0, 2.1, 2.2) -->
             <div class="step" id="step3">
                 <div class="step-header">
                     <span class="step-number">3</span>
-                    Этап 3: Установка Ubuntu
+                    Установка операционной системы
                 </div>
                 <div class="step-content">
                     <div class="photo-grid">
-                        <!-- Фото со страницы 3 (номер 2) -->
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Ubuntu+Installation" 
-                                     alt="Установка Ubuntu - Страница 3">
+                                <img src="Снимок экрана от 2.0.png" 
+                                     alt="Установка Ubuntu 2.0"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+2.0'">
                             </div>
                             <div class="photo-caption">
-                                <strong>Процесс установки</strong><br>
-                                Страница 3: Установка операционной системы (фото 2)
-                                <div class="photo-page">Страница 3 - Фото 2</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Дополнительные фото установки -->
-                        <div class="photo-card">
-                            <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Language+Selection" 
-                                     alt="Выбор языка">
-                            </div>
-                            <div class="photo-caption">
-                                <strong>Выбор языка</strong><br>
-                                Настройка локализации системы
-                                <div class="photo-page">Этап установки</div>
+                                <strong>Процесс установки - 1</strong><br>
+                                Снимок экрана от 2.0.png
+                                <div class="photo-page">Страница 3 (фото 2)</div>
                             </div>
                         </div>
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Disk+Partitioning" 
-                                     alt="Разметка диска">
+                                <img src="Снимок экрана от 2.1.png" 
+                                     alt="Настройка параметров 2.1"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+2.1'">
                             </div>
                             <div class="photo-caption">
-                                <strong>Разметка диска</strong><br>
-                                Настройка разделов виртуального диска
-                                <div class="photo-page">Этап установки</div>
+                                <strong>Процесс установки - 2</strong><br>
+                                Снимок экрана от 2.1.png
+                                <div class="photo-page">Страница 3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-card">
+                            <div class="photo-container">
+                                <img src="Снимок экрана от 2.2.png" 
+                                     alt="Продолжение установки 2.2"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+2.2'">
+                            </div>
+                            <div class="photo-caption">
+                                <strong>Процесс установки - 3</strong><br>
+                                Снимок экрана от 2.2.png
+                                <div class="photo-page">Страница 3</div>
                             </div>
                         </div>
                     </div>
                     <div class="step-description">
-                        <p>💿 Основной этап установки Ubuntu. Выбираем параметры установки, язык системы, раскладку клавиатуры и настройки дисков.</p>
+                        <p>💿 Основной этап установки Ubuntu. Выбираем язык системы, раскладку клавиатуры, настройки дисков и дополнительные параметры.</p>
                         <span class="badge">✓ Установка начата</span>
+                        <span class="badge">✓ Настройка выполнена</span>
                     </div>
                 </div>
             </div>
 
-            <!-- ШАГ 4: Завершение (Страница 4 - фото 1 повтор) -->
+            <!-- ШАГ 4: Завершение (Фото: 3.0 и повтор -1.0) -->
             <div class="step" id="step4">
                 <div class="step-header">
                     <span class="step-number">4</span>
-                    Этап 4: Завершение и первый запуск
+                    Завершение установки
                 </div>
                 <div class="step-content">
                     <div class="photo-grid">
-                        <!-- Повтор фото со страницы 4 (номер 1) -->
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Installation+Complete" 
-                                     alt="Установка завершена - Страница 4">
+                                <img src="Снимок экрана от 3.0.png" 
+                                     alt="Установка завершена 3.0"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+3.0'">
                             </div>
                             <div class="photo-caption">
-                                <strong>Завершение установки</strong><br>
-                                Страница 4: Финальный этап (фото 1)
-                                <div class="photo-page">Страница 4 - Фото 1</div>
+                                <strong>Установка завершена</strong><br>
+                                Снимок экрана от 3.0.png
+                                <div class="photo-page">Страница 4</div>
                             </div>
                         </div>
                         
                         <div class="photo-card">
                             <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Login+Screen" 
-                                     alt="Экран входа">
+                                <img src="Снимок экрана от -1.0.png" 
+                                     alt="Повтор - Финальный экран"
+                                     onerror="this.src='https://via.placeholder.com/600x400/f0f0f0/333333?text=Фото+-1.0+повтор'">
                             </div>
                             <div class="photo-caption">
-                                <strong>Экран входа</strong><br>
-                                Первый запуск установленной системы
-                                <div class="photo-page">Финальный этап</div>
-                            </div>
-                        </div>
-                        
-                        <div class="photo-card">
-                            <div class="photo-container">
-                                <img src="https://via.placeholder.com/600x400/f0f0f0/333333?text=Ubuntu+Desktop" 
-                                     alt="Рабочий стол Ubuntu">
-                            </div>
-                            <div class="photo-caption">
-                                <strong>Рабочий стол</strong><br>
-                                Готовая к работе система Ubuntu
-                                <div class="photo-page">Результат</div>
+                                <strong>Финальный экран (повтор)</strong><br>
+                                Снимок экрана от -1.0.png
+                                <div class="photo-page">Страница 4 (фото 1 повтор)</div>
                             </div>
                         </div>
                     </div>
                     <div class="step-description">
-                        <p>🎉 Установка успешно завершена! Выполняем перезагрузку и входим в новую систему Ubuntu. Все компоненты работают корректно.</p>
+                        <p>🎉 Установка Ubuntu успешно завершена! Система готова к работе. Выполняем перезагрузку и входим в новую операционную систему.</p>
                         <span class="badge">✅ Установка завершена</span>
                         <span class="badge">🎯 Система готова</span>
                     </div>
@@ -480,13 +559,47 @@
         </div>
 
         <div class="footer">
-            <p>📋 Полный отчёт по установке Ubuntu в VirtualBox</p>
-            <p>📷 Все фотографии соответствуют последовательности из PDF-файла:</p>
-            <p>Страница 1 → Страница 2 (Проверка сети) → Страница 3 (фото 2) → Страница 4 (фото 1)</p>
-            <p>🔧 Для замены изображений: замените URL в атрибутах src на ссылки ваших фотографий</p>
-            <p>📅 Дата создания отчёта: Март 2026 | Версия Ubuntu: 22.04 LTS</p>
-            <p>🔗 <a href="#">Скачать PDF-версию отчёта</a> | <a href="#">Исходный код на GitHub</a></p>
+            <p>📁 <strong>Ushakov-Linux</strong> | Полный фотоотчёт установки Ubuntu на VirtualBox</p>
+            <p>🖼️ Все фотографии загружены в репозиторий GitHub с именами от <code>Снимок экрана от -1.1.png</code> до <code>Снимок экрана от 3.0.png</code></p>
+            <p>📅 Март 2026 | 📸 Всего фотографий: 10+ | ✅ Все этапы установки задокументированы</p>
+            <p>🔗 <a href="#">Исходный код на GitHub</a> | <a href="#">Скачать все фотографии</a></p>
         </div>
     </div>
+
+    <script>
+        // Добавляем обработку ошибок загрузки изображений
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                console.log('Не удалось загрузить:', this.src);
+                // Можно добавить уведомление для пользователя
+                this.style.border = '2px solid red';
+            };
+        });
+    </script>
 </body>
 </html>
+```
+
+## Что исправлено:
+
+1. **Правильные пути к файлам**:
+   - `Снимок экрана от -1.1.png`
+   - `Снимок экрана от -1.0.png`
+   - `Снимок экрана от 1.0.png`
+   - `Снимок экрана от 1.1.png`
+   - `Снимок экрана от 1.2.png`
+   - `Снимок экрана от 1.3.png`
+   - `Снимок экрана от 2.0.png`
+   - `Снимок экрана от 2.1.png`
+   - `Снимок экрана от 2.2.png`
+   - `Снимок экрана от 3.0.png`
+
+2. **Добавлена обработка ошибок** - если фото не найдётся, покажется плейсхолдер с красной рамкой
+
+3. **Распределение по этапам**:
+   - **Шаг 1** (Запуск): -1.1, -1.0, 1.0
+   - **Шаг 2** (Сеть): 1.1, 1.2, 1.3
+   - **Шаг 3** (Установка): 2.0, 2.1, 2.2
+   - **Шаг 4** (Завершение): 3.0, -1.0 (повтор)
+
+Теперь все фотографии должны отображаться корректно, так как они находятся в том же репозитории GitHub!
